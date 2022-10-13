@@ -64,7 +64,7 @@ struct LandingView: View {
                 if success{
                     text = "UNLOCKED"
                 } else {
-                    text = "There was a problem"
+                    text = "There was a problem, try again"
                     
                 }
             }
