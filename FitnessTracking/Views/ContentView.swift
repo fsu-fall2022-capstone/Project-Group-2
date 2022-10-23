@@ -48,7 +48,7 @@ struct LandingView: View {
                     .background(Color.black)
                     .cornerRadius(10)
                 
-                NavigationLink(destination: Text("Welcome, " + username).navigationBarBackButtonHidden(false), isActive: $signedIn) {
+                NavigationLink(destination: HomeView().navigationBarBackButtonHidden(false), isActive: $signedIn) {
                     EmptyView()
                 }
                 NavigationLink(destination: SignUpView(), isActive: $newUser) {
