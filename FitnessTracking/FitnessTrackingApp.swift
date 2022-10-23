@@ -11,7 +11,11 @@ import SwiftUI
 struct FitnessTrackingApp: App {
     var body: some Scene {
         WindowGroup {
-            LandingView()
+            if #available(iOS 16.0, *) {
+                LandingView()
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }
