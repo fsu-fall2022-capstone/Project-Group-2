@@ -13,8 +13,7 @@ struct SignUpView: View {
     @State private var confirm = ""
     
     var body: some View {
-        if #available(iOS 16.0, *) {
-            NavigationStack {
+            NavigationView {
                 VStack {
                     Text("Sign Up")
                         .font(.largeTitle)
@@ -40,9 +39,6 @@ struct SignUpView: View {
                         .cornerRadius(10)
                 }
             }
-        } else {
-            // Fallback on earlier versions
-        }
     }
 }
 
