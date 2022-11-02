@@ -5,14 +5,53 @@
 
 import LocalAuthentication
 import SwiftUI
+import FirebaseAuth
 //test
 
+class AuthViewModel: ObservableObject{
+    
+    let auth = Auth.auth()
+    
+    @Published var authorized = false
+    
+    var isSignedIn: Bool{
+        return auth.currentUser != nil
+    }
+    
+    func signin(email: String , password: String){
+        auth.signIn(withEmail: email, password: password){ [weak self] result, error in
+            guard result != nil, error == nil else{
+                return
+            }
+            DispatchQueue.main.async{
+                self?.authorized = true
+            }
+        }
+        
+        
+    }
+    
+    func signup(email: String , password: String){
+        auth.createUser(withEmail: email, password: password) { [weak self] result, error in
+            guard result != nil, error == nil else{
+                return
+            }
+            DispatchQueue.main.async{
+                self?.authorized = true
+            }
+        }
+        
+    }
+}
+
 struct LandingView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     @State private var unlocked = false
     @State private var newUser = false
     @State private var existingUser = false
     @State private var text = "LOCKED"
-    @State private var username = ""
+    @State private var email = ""
     @State private var password = ""
     @State private var signedIn = false;
     
@@ -23,15 +62,20 @@ struct LandingView: View {
                     .font(.largeTitle)
                     .bold()
                     .padding()
-                TextField("Username", text: $username)
+                TextField("Email", text: $email)
                     .padding()
                     .frame(width: 300, height: 50)
                     .cornerRadius(10)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
                 SecureField("Password", text: $password)
                     .padding()
                     .frame(width: 300, height: 50)
                     .cornerRadius(10)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
                 Button("Log In") {
+                    authViewModel.signin(email: email, password: password)
                     signedIn = true
                 }.padding()
                     .frame(width: 300, height: 50)
@@ -55,9 +99,11 @@ struct LandingView: View {
                 }
             }
         }
+        .onAppear(){
+            authViewModel.authorized = authViewModel.isSignedIn
+        }
     }
     
-    //Jay Commit test
     
     func authenticate(){
         let context = LAContext()
