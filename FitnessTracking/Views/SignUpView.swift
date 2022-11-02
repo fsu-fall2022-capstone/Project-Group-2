@@ -10,6 +10,7 @@ import FirebaseAuth
 
 struct SignUpView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     @State private var email = ""
     @State private var password = ""
@@ -23,75 +24,68 @@ struct SignUpView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Sign Up")
-                    .font(.largeTitle)
-                    .bold()
-                    .padding()
-                TextField("Enter First Name", text: $firstName)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .cornerRadius(10)
-                    .disableAutocorrection(true)
-                    .autocapitalization(.none)
-                TextField("Enter Last Name", text: $lastName)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .cornerRadius(10)
-                    .disableAutocorrection(true)
-                    .autocapitalization(.none)
-                TextField("Enter Email", text: $email)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .cornerRadius(10)
-                    .disableAutocorrection(true)
-                    .autocapitalization(.none)
-                SecureField("Enter Password", text: $password)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .cornerRadius(10)
-                    .disableAutocorrection(true)
-                    .autocapitalization(.none)
-                /*SecureField("Confirm Password", text: $confirm)
-                 .padding()
-                 .frame(width: 300, height: 50)
-                 .cornerRadius(10)*/
-                Button("Sign Up") {
-                    authViewModel.signup(email: email, password: password)
+                VStack{
+                    Text("Sign Up")
+                        .font(.largeTitle)
+                        .bold()
+                        .padding()
+                    TextField("Enter Email", text: $email)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .cornerRadius(10)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                    SecureField("Enter Password", text: $password)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .cornerRadius(10)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
                     
-                    newUser = true
-                    if authViewModel.authorized{
-                        newUser = true
-                    }
-                    else{
-                        return
-                    }
+                    Divider()
+                    
+                    TextField("Enter First Name", text: $firstName)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .cornerRadius(10)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                    TextField("Enter Last Name", text: $lastName)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .cornerRadius(10)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                }
+                Button("Sign Up") {
+                    signup()
                 }.padding()
                     .frame(width: 300, height: 50)
                     .foregroundColor(.white)
                     .background(Color.black)
                     .cornerRadius(10)
-                Text("Already a user?")
-                Button("LOGIN") {
-                    currentUser = true
-                }.padding()
-                    .foregroundColor(.black)
-                    .background(.white)
-                //.bold(true)
-                //Login/SignUp Button Linker Creates
-                //Uninteded Back Button
-                
                 NavigationLink(destination: LandingView(), isActive: $newUser) {
                     EmptyView()
                 }
                 
             }
-            /*HStack{
-             
-             }*/
+            .toolbar{
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "xmark")
+                })
+            }
         }
-        .onAppear(){
-            authViewModel.authorized = authViewModel.isSignedIn
+    }
+    
+    func signup(){
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if error != nil{
+                print(error!.localizedDescription)
+            }
         }
+        
     }
     
 }

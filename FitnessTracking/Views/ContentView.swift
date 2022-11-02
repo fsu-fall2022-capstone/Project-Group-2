@@ -17,31 +17,6 @@ class AuthViewModel: ObservableObject{
     var isSignedIn: Bool{
         return auth.currentUser != nil
     }
-    
-    func signin(email: String , password: String){
-        auth.signIn(withEmail: email, password: password){ [weak self] result, error in
-            guard result != nil, error == nil else{
-                return
-            }
-            DispatchQueue.main.async{
-                self?.authorized = true
-            }
-        }
-        
-        
-    }
-    
-    func signup(email: String , password: String){
-        auth.createUser(withEmail: email, password: password) { [weak self] result, error in
-            guard result != nil, error == nil else{
-                return
-            }
-            DispatchQueue.main.async{
-                self?.authorized = true
-            }
-        }
-        
-    }
 }
 
 struct LandingView: View {
@@ -53,55 +28,65 @@ struct LandingView: View {
     @State private var text = "LOCKED"
     @State private var email = ""
     @State private var password = ""
-    @State private var signedIn = false;
+    @State private var showSignUp = false;
+    @State private var authorized = false;
     
-    var body: some View {
-        NavigationView {
+    var body: some View{
             VStack {
-                Text("Login")
-                    .font(.largeTitle)
-                    .bold()
-                    .padding()
-                TextField("Email", text: $email)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .cornerRadius(10)
-                    .disableAutocorrection(true)
-                    .autocapitalization(.none)
-                SecureField("Password", text: $password)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .cornerRadius(10)
-                    .disableAutocorrection(true)
-                    .autocapitalization(.none)
-                Button("Log In") {
-                    authViewModel.signin(email: email, password: password)
-                    signedIn = true
-                }.padding()
-                    .frame(width: 300, height: 50)
-                    .foregroundColor(.white)
-                    .background(Color.black)
-                    .cornerRadius(10)
-                Text("New User?")
-                Button("Sign Up") {
-                    newUser = true
-                }.padding()
-                    .frame(width: 300, height: 50)
-                    .foregroundColor(.white)
-                    .background(Color.black)
-                    .cornerRadius(10)
+                VStack{
+                    Text("Login")
+                        .font(.largeTitle)
+                        .bold()
+                        .padding()
+                    TextField("Email", text: $email)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .cornerRadius(10)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                    SecureField("Password", text: $password)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .cornerRadius(10)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                }
                 
-                NavigationLink(destination: HomeView().navigationBarBackButtonHidden(false), isActive: $signedIn) {
-                    EmptyView()
+                VStack{
+                    Button("Log In") {
+                        signin()
+                        //signedIn = true
+                    }.padding()
+                        .frame(width: 300, height: 50)
+                        .foregroundColor(.white)
+                        .background(Color.black)
+                        .cornerRadius(10)
+                    Button("Sign Up") {
+                        showSignUp.toggle()
+                    }.padding()
+                        .frame(width: 300, height: 50)
+                        .foregroundColor(.white)
+                        .background(Color.black)
+                        .cornerRadius(10)
+                        
+                        .sheet(isPresented: $showSignUp, content: {SignUpView()
+                            
+                        })
                 }
                 NavigationLink(destination: SignUpView(), isActive: $newUser) {
                     EmptyView()
                 }
             }
+    }
+    
+    func signin(){
+        Auth.auth().signIn(withEmail: email, password: password){ result, error in
+            if error != nil{
+                print(error!.localizedDescription)
+            }
         }
-        .onAppear(){
-            authViewModel.authorized = authViewModel.isSignedIn
-        }
+        
+        
     }
     
     
@@ -129,6 +114,8 @@ struct LandingView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView{
             LandingView()
+        }
     }
 }
