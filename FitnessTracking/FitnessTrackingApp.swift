@@ -21,7 +21,7 @@ struct FitnessTrackingApp: App {
             //let authViewModel = AuthViewModel()
             
             if #available(iOS 16.0, *) {
-                LandingView()
+                LoginView()
                     //.environmentObject(authViewModel)
             } else {
                 // Fallback on earlier versions

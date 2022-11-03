@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7241C37D29138C3400956CB0 /* SignUpDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C37C29138C3400956CB0 /* SignUpDetails.swift */; };
+		7241C38029138CC700956CB0 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C37F29138CC700956CB0 /* SignUpService.swift */; };
+		7241C38329138ED400956CB0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 7241C38229138ED400956CB0 /* FirebaseDatabase */; };
+		7241C3862913989000956CB0 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C3852913989000956CB0 /* SignUpViewModel.swift */; };
 		72F599B02912575800BE29EE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 72F599AF2912575800BE29EE /* FirebaseAuth */; };
 		72F599B22912575800BE29EE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 72F599B12912575800BE29EE /* FirebaseStorage */; };
 		72F599B429125DA900BE29EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72F599B329125DA900BE29EE /* GoogleService-Info.plist */; };
@@ -22,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7241C37C29138C3400956CB0 /* SignUpDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetails.swift; sourceTree = "<group>"; };
+		7241C37F29138CC700956CB0 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		7241C3852913989000956CB0 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		72F599B329125DA900BE29EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72F599B62913474300BE29EE /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		72F599B829134A8000BE29EE /* InputPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordView.swift; sourceTree = "<group>"; };
@@ -40,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7241C38329138ED400956CB0 /* FirebaseDatabase in Frameworks */,
 				72F599B02912575800BE29EE /* FirebaseAuth in Frameworks */,
 				72F599B22912575800BE29EE /* FirebaseStorage in Frameworks */,
 			);
@@ -48,11 +56,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		72F599B52913466000BE29EE /* New Group */ = {
+		7241C374291380A900956CB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C600428F5202F00281635 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7241C375291381F600956CB0 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				7241C3842913972B00956CB0 /* ViewModel */,
+				7241C37E29138C8F00956CB0 /* Service */,
+				7241C37B29138BE600956CB0 /* Model */,
+				7241C3762913821400956CB0 /* Views */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		7241C3762913821400956CB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB4204932905FA100087C04A /* SignUpView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7241C378291385FF00956CB0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7241C3792913861800956CB0 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7241C3792913861800956CB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB4204912905F9FA0087C04A /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7241C37A29138B5500956CB0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BBA8F0FE2905E37E0071AD38 /* Views */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7241C37B29138BE600956CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7241C37C29138C3400956CB0 /* SignUpDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7241C37E29138C8F00956CB0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7241C37F29138CC700956CB0 /* SignUpService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7241C38129138ED400956CB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "New Group";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7241C3842913972B00956CB0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7241C3852913989000956CB0 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72F599B52913466000BE29EE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7241C374291380A900956CB0 /* Views */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		BB3C5FF628F5202F00281635 = {
@@ -60,6 +151,7 @@
 			children = (
 				BB3C600128F5202F00281635 /* FitnessTracking */,
 				BB3C600028F5202F00281635 /* Products */,
+				7241C38129138ED400956CB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,8 +166,10 @@
 		BB3C600128F5202F00281635 /* FitnessTracking */ = {
 			isa = PBXGroup;
 			children = (
-				72F599B52913466000BE29EE /* New Group */,
-				BBA8F0FE2905E37E0071AD38 /* Views */,
+				7241C37A29138B5500956CB0 /* Utility */,
+				7241C378291385FF00956CB0 /* Home */,
+				7241C375291381F600956CB0 /* SignUp */,
+				72F599B52913466000BE29EE /* Login */,
 				BB3C600228F5202F00281635 /* FitnessTrackingApp.swift */,
 				72F599B329125DA900BE29EE /* GoogleService-Info.plist */,
 				BB3C600628F5203100281635 /* Assets.xcassets */,
@@ -95,9 +189,6 @@
 		BBA8F0FE2905E37E0071AD38 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BB3C600428F5202F00281635 /* LoginView.swift */,
-				BB4204912905F9FA0087C04A /* HomeView.swift */,
-				BB4204932905FA100087C04A /* SignUpView.swift */,
 				72F599B62913474300BE29EE /* InputTextView.swift */,
 				72F599B829134A8000BE29EE /* InputPasswordView.swift */,
 				72F599BA29134B7E00BE29EE /* ButtonView.swift */,
@@ -124,6 +215,7 @@
 			packageProductDependencies = (
 				72F599AF2912575800BE29EE /* FirebaseAuth */,
 				72F599B12912575800BE29EE /* FirebaseStorage */,
+				7241C38229138ED400956CB0 /* FirebaseDatabase */,
 			);
 			productName = FitnessTracking;
 			productReference = BB3C5FFF28F5202F00281635 /* FitnessTracking.app */;
@@ -185,10 +277,13 @@
 			files = (
 				BB4204942905FA100087C04A /* SignUpView.swift in Sources */,
 				72F599B72913474300BE29EE /* InputTextView.swift in Sources */,
+				7241C3862913989000956CB0 /* SignUpViewModel.swift in Sources */,
+				7241C37D29138C3400956CB0 /* SignUpDetails.swift in Sources */,
 				72F599B929134A8000BE29EE /* InputPasswordView.swift in Sources */,
 				BB4204922905F9FA0087C04A /* HomeView.swift in Sources */,
 				BB3C600528F5202F00281635 /* LoginView.swift in Sources */,
 				BB3C600328F5202F00281635 /* FitnessTrackingApp.swift in Sources */,
+				7241C38029138CC700956CB0 /* SignUpService.swift in Sources */,
 				72F599BB29134B7E00BE29EE /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +414,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FitnessTracking/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5X54QLSNUJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -347,10 +442,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FitnessTracking/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5X54QLSNUJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -366,6 +462,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = MKUltra.FitnessTracking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -407,6 +504,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7241C38229138ED400956CB0 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72F599AE2912575800BE29EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		72F599AF2912575800BE29EE /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 72F599AE2912575800BE29EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
