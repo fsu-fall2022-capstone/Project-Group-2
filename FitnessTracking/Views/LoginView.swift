@@ -57,10 +57,8 @@ struct LandingView: View {
                         signin()
                         //signedIn = true
                     }.padding()
-                        .frame(width: 300, height: 50)
-                        .foregroundColor(.white)
-                        .background(Color.black)
-                        .cornerRadius(10)
+                        
+                    
                     Button("Sign Up") {
                         showSignUp.toggle()
                     }.padding()
@@ -112,10 +110,10 @@ struct LandingView: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct LandingView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            LandingView()
+            LView()
         }
     }
 }

@@ -10,8 +10,11 @@
 		72F599B02912575800BE29EE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 72F599AF2912575800BE29EE /* FirebaseAuth */; };
 		72F599B22912575800BE29EE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 72F599B12912575800BE29EE /* FirebaseStorage */; };
 		72F599B429125DA900BE29EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72F599B329125DA900BE29EE /* GoogleService-Info.plist */; };
+		72F599B72913474300BE29EE /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F599B62913474300BE29EE /* InputTextView.swift */; };
+		72F599B929134A8000BE29EE /* InputPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F599B829134A8000BE29EE /* InputPasswordView.swift */; };
+		72F599BB29134B7E00BE29EE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F599BA29134B7E00BE29EE /* ButtonView.swift */; };
 		BB3C600328F5202F00281635 /* FitnessTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C600228F5202F00281635 /* FitnessTrackingApp.swift */; };
-		BB3C600528F5202F00281635 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C600428F5202F00281635 /* ContentView.swift */; };
+		BB3C600528F5202F00281635 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C600428F5202F00281635 /* LoginView.swift */; };
 		BB3C600728F5203100281635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3C600628F5203100281635 /* Assets.xcassets */; };
 		BB3C600A28F5203100281635 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3C600928F5203100281635 /* Preview Assets.xcassets */; };
 		BB4204922905F9FA0087C04A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4204912905F9FA0087C04A /* HomeView.swift */; };
@@ -20,9 +23,12 @@
 
 /* Begin PBXFileReference section */
 		72F599B329125DA900BE29EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		72F599B62913474300BE29EE /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
+		72F599B829134A8000BE29EE /* InputPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordView.swift; sourceTree = "<group>"; };
+		72F599BA29134B7E00BE29EE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		BB3C5FFF28F5202F00281635 /* FitnessTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3C600228F5202F00281635 /* FitnessTrackingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTrackingApp.swift; sourceTree = "<group>"; };
-		BB3C600428F5202F00281635 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB3C600428F5202F00281635 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BB3C600628F5203100281635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB3C600928F5203100281635 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BB4204912905F9FA0087C04A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -42,6 +48,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72F599B52913466000BE29EE /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		BB3C5FF628F5202F00281635 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +74,7 @@
 		BB3C600128F5202F00281635 /* FitnessTracking */ = {
 			isa = PBXGroup;
 			children = (
+				72F599B52913466000BE29EE /* New Group */,
 				BBA8F0FE2905E37E0071AD38 /* Views */,
 				BB3C600228F5202F00281635 /* FitnessTrackingApp.swift */,
 				72F599B329125DA900BE29EE /* GoogleService-Info.plist */,
@@ -81,9 +95,12 @@
 		BBA8F0FE2905E37E0071AD38 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BB3C600428F5202F00281635 /* ContentView.swift */,
+				BB3C600428F5202F00281635 /* LoginView.swift */,
 				BB4204912905F9FA0087C04A /* HomeView.swift */,
 				BB4204932905FA100087C04A /* SignUpView.swift */,
+				72F599B62913474300BE29EE /* InputTextView.swift */,
+				72F599B829134A8000BE29EE /* InputPasswordView.swift */,
+				72F599BA29134B7E00BE29EE /* ButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,9 +184,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB4204942905FA100087C04A /* SignUpView.swift in Sources */,
+				72F599B72913474300BE29EE /* InputTextView.swift in Sources */,
+				72F599B929134A8000BE29EE /* InputPasswordView.swift in Sources */,
 				BB4204922905F9FA0087C04A /* HomeView.swift in Sources */,
-				BB3C600528F5202F00281635 /* ContentView.swift in Sources */,
+				BB3C600528F5202F00281635 /* LoginView.swift in Sources */,
 				BB3C600328F5202F00281635 /* FitnessTrackingApp.swift in Sources */,
+				72F599BB29134B7E00BE29EE /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +350,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FitnessTracking/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
