@@ -11,7 +11,7 @@ import FirebaseAuth
 struct SignUpView: View {
     
     /*@StateObject private var vm = SignUpViewModelImpl(
-        service: SignUpService()
+        service: SignUpImpl()
     )*/
     @State private var email = ""
     @State private var password = ""

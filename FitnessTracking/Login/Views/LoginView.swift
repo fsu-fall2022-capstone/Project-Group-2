@@ -23,18 +23,22 @@ struct LoginView: View {
 
     @State private var showSignUp = false
     
+    @StateObject private var vm = LoginViewModelImpl(service: LoginServiceImpl())
+    
     var body: some View{
         VStack{
             Text("Login")
                 .font(.largeTitle)
                 .bold()
                 .padding()
-            InputTextView(text: .constant(""), holder: "Email",
+            InputTextView(text: $vm.details.email, holder: "Email",
                           keyboard: .emailAddress)
             
-            InputPasswordView(password: .constant(""), holder: "Password")
+            InputPasswordView(password: $vm.details.password, holder: "Password")
             
-            ButtonView(title: "Login"){ }
+            ButtonView(title: "Login"){
+                vm.login()
+            }
             
             ButtonView(title: "SignUp"){
                 showSignUp.toggle()
