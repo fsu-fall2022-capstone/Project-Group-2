@@ -31,7 +31,19 @@ struct SettingsView: View {
     }
 }
 
+struct LogoutView: View {
+    @EnvironmentObject var sessionService: SessionServiceImpl
+    var body: some View{
+        VStack{
+            ButtonView(title: "Logout"){
+                sessionService.logout()
+            }
+        }
+    }
+}
+
 struct HomeView: View {
+    
     var body: some View {
         TabView {
             WorkoutView()
@@ -50,6 +62,11 @@ struct HomeView: View {
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }
+            LogoutView()
+                .tabItem{
+                    Label("Logout", systemImage: "arrow.right")
+                }
+            
         }
     }
 }

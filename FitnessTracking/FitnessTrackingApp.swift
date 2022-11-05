@@ -16,24 +16,27 @@ struct FitnessTrackingApp: App {
         FirebaseApp.configure()
     }
     
+    @StateObject var sessionService = SessionServiceImpl()
+    
     var body: some Scene {
         WindowGroup {
-            //let authViewModel = AuthViewModel()
-            
-            if #available(iOS 16.0, *) {
-                LoginView()
-                    //.environmentObject(authViewModel)
-            } else {
-                // Fallback on earlier versions
+            NavigationView{
+                if #available(iOS 16.0, *) {
+                    switch sessionService.state{
+                    case .loggedIn:
+                        HomeView()
+                            .environmentObject(sessionService)
+                    case .loggedOut:
+                        LoginView()
+                    }
+                    
+                }
+                else {
+                    // Fallback on earlier versions
+                }
             }
+            
         }
     }
 }
 
-/*class AppDelegate: NSObject, UIApplicationDelegate{
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
-        FirebaseApp.configure()
-        return true
-    }
-}*/
