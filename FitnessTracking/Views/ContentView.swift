@@ -32,8 +32,12 @@ struct LandingView: View {
                     .frame(width: 300, height: 50)
                     .cornerRadius(10)
                 Button("Log In") {
-                    signedIn = true
-                }.padding()
+                    if !$username.wrappedValue.isEmpty && !$password.wrappedValue.isEmpty{
+                        signedIn = true
+                    }
+                
+                }
+                .padding()
                     .frame(width: 300, height: 50)
                     .foregroundColor(.white)
                     .background(Color.black)
