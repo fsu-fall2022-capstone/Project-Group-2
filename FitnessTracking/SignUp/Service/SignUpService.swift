@@ -10,6 +10,11 @@ import Combine
 import FirebaseDatabase
 import Firebase
 
+enum dbKeys: String{
+    case firstName
+    case lastName
+}
+
 protocol SignUpService {
     func signup(with details: SignUpDetails) -> AnyPublisher<Void, Error>
 }
@@ -30,11 +35,8 @@ final class SignUpImpl: SignUpService{
                         
                         if let uid = result?.user.uid{
                             
-                            var firstName = ""
-                            var lastName = ""
-                            
-                            let values = [firstName: details.firstName,
-                                           lastName: details.lastName] as [String : Any]
+                            let values = [dbKeys.firstName.rawValue: details.firstName,
+                                          dbKeys.lastName.rawValue: details.lastName] as [String : Any]
                             
                             Database.database()
                                 .reference()
