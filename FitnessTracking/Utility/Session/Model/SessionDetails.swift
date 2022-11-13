@@ -8,5 +8,6 @@
 import Foundation
 
 struct SessionDetails{
-    //Values too be grabbed from user's database to populate home page and beyond
+    let firstName: String
+    let lastName: String
 }

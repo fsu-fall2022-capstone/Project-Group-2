@@ -15,8 +15,8 @@ enum SessionState{
 }
 
 protocol SessionService{
-    var state: SessionState { get}
-    //var userDetails: SessionUserDetails? { get}
+    var state: SessionState {get}
+    var userDetails: SessionDetails? {get}
     func logout()
 }
 
@@ -44,6 +44,24 @@ final class SessionServiceImpl: ObservableObject, SessionService {
     }
     
     func handleRefresh(with uid: String){
-        //Function will grab uid properties stored with firebase and assign to userdetails
+        
+        Database.database()
+            .reference()
+            .child("users")
+            .child(uid)
+            .observe(.value) { [weak self] snapshot in
+
+                guard let self = self,
+                    let firstName = value[dbKeys.firstName.rawValue] as? String,
+                    let lastName = value[dbKeys.lastName.rawValue] as? String else{
+                        return
+                    }
+
+                DispatchQueue.main.async{
+                    async.userDetails = SessionDetails(firstName: firstName,
+                                                        lastName: lastName)
+                }
+
+            }
     }
 }
