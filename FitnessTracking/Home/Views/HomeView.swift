@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-struct WorkoutView: View {
-    var body: some View {
-        Text("Workouts")
-    }
-}
-
 struct DietView: View {
     var body: some View {
         Text("Diet")
