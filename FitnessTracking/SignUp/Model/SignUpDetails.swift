@@ -2,7 +2,7 @@
 //  SignUpDetails.swift
 //  FitnessTracking
 //
-//  Created by Annie Chow on 11/3/22.
+//  Created by Jala Jean-Charles on 11/3/22.
 //
 
 import Foundation

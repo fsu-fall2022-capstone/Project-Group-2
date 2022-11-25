@@ -2,7 +2,7 @@
 //  ButtonView.swift
 //  FitnessTracking
 //
-//  Created by Annie Chow on 11/2/22.
+//  Created by Jalal Jean-Charles on 11/2/22.
 //
 
 import SwiftUI

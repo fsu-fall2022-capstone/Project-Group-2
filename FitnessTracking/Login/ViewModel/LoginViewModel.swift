@@ -2,7 +2,7 @@
 //  LoginViewModel.swift
 //  FitnessTracking
 //
-//  Created by Annie Chow on 11/5/22.
+//  Created by Jalal Jean-Charles on 11/5/22.
 //
 
 import Foundation
@@ -16,21 +16,34 @@ enum LoginState{
 
 protocol LoginViewModel {
     func login()
-    var service: LoginService { get }
-    var state: LoginState { get }
-    var details: LoginDetails { get }
+    var service: LoginService {get}
+    var state: LoginState {get}
+    var details: LoginDetails {get}
+    var hasError: Bool {get}
     init(service: LoginService)
 }
 
 final class LoginViewModelImpl: ObservableObject, LoginViewModel{
     
     @Published var state: LoginState = .na
+    @Published var hasError: Bool = false
     @Published var details: LoginDetails = LoginDetails(email: "", password: "")
     
     let service: LoginService
     
     init(service: LoginService){
         self.service = service
+        
+        $state
+            .map{ state -> Bool in
+                switch state {
+                case .successful, .na:
+                    return false
+                case .failed:
+                    return true
+                }
+            }
+            .assign(to: &$hasError)
     }
     
     private var subscriptions = Set<AnyCancellable>()

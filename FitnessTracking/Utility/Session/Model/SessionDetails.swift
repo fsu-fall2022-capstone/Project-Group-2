@@ -2,11 +2,12 @@
 //  SessionDetails.swift
 //  FitnessTracking
 //
-//  Created by Annie Chow on 11/5/22.
+//  Created by Jalal Jean-Charles on 11/5/22.
 //
 
 import Foundation
 
 struct SessionDetails{
-    //Values too be grabbed from user's database to populate home page and beyond
+    let firstName: String
+    let lastName: String
 }

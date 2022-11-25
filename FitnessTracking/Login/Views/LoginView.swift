@@ -23,7 +23,7 @@ struct LoginView: View {
 
     @State private var showSignUp = false
     
-    @StateObject private var vm = LoginViewModelImpl(service: LoginServiceImpl())
+    @StateObject private var loginVM = LoginViewModelImpl(service: LoginServiceImpl())
     
     var body: some View{
         VStack{
@@ -31,13 +31,13 @@ struct LoginView: View {
                 .font(.largeTitle)
                 .bold()
                 .padding()
-            InputTextView(text: $vm.details.email, holder: "Email",
+            InputTextView(text: $loginVM.details.email, holder: "Email",
                           keyboard: .emailAddress)
             
-            InputPasswordView(password: $vm.details.password, holder: "Password")
+            InputPasswordView(password: $loginVM.details.password, holder: "Password")
             
             ButtonView(title: "Login"){
-                vm.login()
+                loginVM.login()
             }
             
             ButtonView(title: "SignUp"){
@@ -49,6 +49,15 @@ struct LoginView: View {
             })
                 
         }
+        .alert(isPresented: $loginVM.hasError,
+               content: {
+            if case .failed(let error) = loginVM.state{
+                return Alert(title: Text("Error"), message: Text(error.localizedDescription))
+            }
+            else{
+                return Alert(title: Text("ERROR 505"), message: Text("unresolved issue on Login"))
+            }
+        })
     }
     
     /*func authenticate(){
