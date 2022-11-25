@@ -1,0 +1,58 @@
+//
+//  SignUpViewModel.swift
+//  FitnessTracking
+//
+//  Created by Annie Chow on 11/3/22.
+//
+
+import Foundation
+import Combine
+
+enum SignUpState{
+    case successful
+    case failed(error: Error)
+    case na
+}
+
+protocol SignUpViewModel {
+    func signup()
+    var service: SignUpService { get }
+    var state: SignUpState { get }
+    var details: SignUpDetails { get }
+    init(service: SignUpService)
+}
+
+final class SignUpViewModelImpl: ObservableObject, SignUpViewModel{
+    
+    let service: SignUpService
+    
+    var state: SignUpState = .na
+    
+    var details: SignUpDetails = SignUpDetails(email: "",
+                                               password: "",
+                                               firstName: "",
+                                               lastName: "")
+    init(service: SignUpService){
+        self.service = service
+    }
+    
+    private var subscriptions = Set<AnyCancellable>()
+    
+    func signup() {
+        
+        service
+            .signup(with: details)
+            .sink { res in
+                
+                switch res{
+                case .failure(let error):
+                    self.state = .failed(error: error)
+                default: break
+                }
+                
+            } receiveValue: {  [weak self] in
+                self?.state = .successful
+            }
+            .store(in: &subscriptions)
+    }
+}
