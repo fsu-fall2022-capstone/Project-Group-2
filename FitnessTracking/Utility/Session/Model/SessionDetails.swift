@@ -2,7 +2,7 @@
 //  SessionDetails.swift
 //  FitnessTracking
 //
-//  Created by Annie Chow on 11/5/22.
+//  Created by Jalal Jean-Charles on 11/5/22.
 //
 
 import Foundation
