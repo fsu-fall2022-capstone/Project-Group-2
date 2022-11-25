@@ -1,27 +1,28 @@
 //
-//  UserDataModel.swift
+//  UserDataService.swift
 //  FitnessTracking
 //
-//  Created by Noah William Shaffer on 11/24/22.
+//  Created by Noah William Shaffer on 11/25/22.
 //
-/*
+
+
 import Foundation
 import Combine
 import FirebaseAuth
 
 protocol UserDataService{
-    func UserData(with details:  LoginDetails) -> AnyPublisher<Void,Error>
+    func UserData(with details:  UserDataDetails) -> AnyPublisher<Void,Error>
 }
 
-final class UserDataModelImpl: UserDataService {
-    func UserData(with details:  LoginDetails) -> AnyPublisher<Void,Error> {
+final class UserDataServiceImpl: UserDataService {
+    func UserData(with details:  UserDataDetails) -> AnyPublisher<Void,Error> {
         Deferred{
             
            
             Future { promise in
                 //Change to the database name here
-                Auth.auth().signIn(withEmail: details.email,
-                                       password: details.password) { result, error in
+                Auth.auth().signIn(withEmail: details.gender,
+                                       password: details.goal) { result, error in
                     if let err = error {
                         print(error!.localizedDescription)
                         promise(.failure(err))
@@ -37,4 +38,3 @@ final class UserDataModelImpl: UserDataService {
     }
     
 }
-*/

@@ -4,10 +4,11 @@
 //
 //  Created by Noah William Shaffer on 11/24/22.
 //
-/*
+
 import Foundation
 import Foundation
 import Combine
+
 
 enum UserDataState{
     case successful
@@ -23,12 +24,12 @@ protocol UserDataViewModel {
     var hasError: Bool {get}
     init(service: UserDataService)
 }
+
+final class UserDataViewModelImpl: ObservableObject, UserDataViewModel{
     
-    var state: UserDataState
-    
-    var details: UserDataDetails
-    
-    var hasError: Bool
+    @Published var state: UserDataState = .na
+    @Published var hasError: Bool = false
+    @Published var details: UserDataDetails = UserDataDetails(gender: "", age: "25", height: "69", weight: "200", activity: "",  goal: "")
     
     let service: UserDataService
     
@@ -66,4 +67,3 @@ protocol UserDataViewModel {
             .store(in: &subscriptions)
     }
 }
-*/

@@ -23,9 +23,9 @@
 		72F599BB29134B7E00BE29EE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F599BA29134B7E00BE29EE /* ButtonView.swift */; };
 		AA9EB56B2930471400FA3CCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA9EB56A2930471300FA3CCF /* GoogleService-Info.plist */; };
 		AA9EB57E29304E2000FA3CCF /* UserDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB57D29304E2000FA3CCF /* UserDataViewModel.swift */; };
-		AA9EB58029304E8200FA3CCF /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB57F29304E8200FA3CCF /* UserDataModel.swift */; };
 		AA9EB58229304EBD00FA3CCF /* UserDataDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB58129304EBC00FA3CCF /* UserDataDetails.swift */; };
 		AA9EB58429304ED800FA3CCF /* UserDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB58329304ED800FA3CCF /* UserDataView.swift */; };
+		AAAC85D3293155A500CBD208 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC85D2293155A500CBD208 /* UserDataService.swift */; };
 		BB3C600328F5202F00281635 /* FitnessTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C600228F5202F00281635 /* FitnessTrackingApp.swift */; };
 		BB3C600528F5202F00281635 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C600428F5202F00281635 /* LoginView.swift */; };
 		BB3C600728F5203100281635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3C600628F5203100281635 /* Assets.xcassets */; };
@@ -49,9 +49,9 @@
 		72F599BA29134B7E00BE29EE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		AA9EB56A2930471300FA3CCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA9EB57D29304E2000FA3CCF /* UserDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewModel.swift; sourceTree = "<group>"; };
-		AA9EB57F29304E8200FA3CCF /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		AA9EB58129304EBC00FA3CCF /* UserDataDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataDetails.swift; sourceTree = "<group>"; };
 		AA9EB58329304ED800FA3CCF /* UserDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataView.swift; sourceTree = "<group>"; };
+		AAAC85D2293155A500CBD208 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		BB3C5FFF28F5202F00281635 /* FitnessTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3C600228F5202F00281635 /* FitnessTrackingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTrackingApp.swift; sourceTree = "<group>"; };
 		BB3C600428F5202F00281635 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 		AA9EB57A29304D7C00FA3CCF /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				AA9EB58129304EBC00FA3CCF /* UserDataDetails.swift */,
+				AAAC85D2293155A500CBD208 /* UserDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 		AA9EB57B29304DEB00FA3CCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AA9EB57F29304E8200FA3CCF /* UserDataModel.swift */,
+				AA9EB58129304EBC00FA3CCF /* UserDataDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 				BB5151DA2918816D00F3ECA9 /* WorkoutView.swift in Sources */,
 				72F599B72913474300BE29EE /* InputTextView.swift in Sources */,
 				7241C3862913989000956CB0 /* SignUpViewModel.swift in Sources */,
-				AA9EB58029304E8200FA3CCF /* UserDataModel.swift in Sources */,
+				AAAC85D3293155A500CBD208 /* UserDataService.swift in Sources */,
 				7241C37D29138C3400956CB0 /* SignUpDetails.swift in Sources */,
 				7241C38A2916BEE500956CB0 /* SessionDetails.swift in Sources */,
 				72F599B929134A8000BE29EE /* InputPasswordView.swift in Sources */,
