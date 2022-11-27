@@ -13,7 +13,6 @@ import FirebaseAuth
 protocol UserDataService{
     func UserData(with details:  UserDataDetails) -> AnyPublisher<Void,Error>
 }
-
 final class UserDataServiceImpl: UserDataService {
     func UserData(with details:  UserDataDetails) -> AnyPublisher<Void,Error> {
         Deferred{

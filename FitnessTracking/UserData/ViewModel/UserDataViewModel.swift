@@ -32,7 +32,6 @@ final class UserDataViewModelImpl: ObservableObject, UserDataViewModel{
     @Published var details: UserDataDetails = UserDataDetails(gender: "", age: "", height: "", weight: "", activity: "",  goal: "")
     
     let service: UserDataService
-    
     init(service: UserDataService){
         self.service = service
         

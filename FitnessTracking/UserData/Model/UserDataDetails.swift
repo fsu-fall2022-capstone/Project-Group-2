@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct UserDataDetails{
     var gender : String
     var age : String
