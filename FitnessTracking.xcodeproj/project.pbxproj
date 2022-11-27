@@ -22,6 +22,7 @@
 		72F599B929134A8000BE29EE /* InputPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F599B829134A8000BE29EE /* InputPasswordView.swift */; };
 		72F599BB29134B7E00BE29EE /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F599BA29134B7E00BE29EE /* ButtonView.swift */; };
 		BB1FFDBB2933303100C20C4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB1FFDBA2933303000C20C4A /* GoogleService-Info.plist */; };
+		BB327274293426F2001562B3 /* WorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB327273293426F2001562B3 /* WorkoutListView.swift */; };
 		BB3C600328F5202F00281635 /* FitnessTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C600228F5202F00281635 /* FitnessTrackingApp.swift */; };
 		BB3C600528F5202F00281635 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C600428F5202F00281635 /* LoginView.swift */; };
 		BB3C600728F5203100281635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3C600628F5203100281635 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		72F599B829134A8000BE29EE /* InputPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordView.swift; sourceTree = "<group>"; };
 		72F599BA29134B7E00BE29EE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		BB1FFDBA2933303000C20C4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB327273293426F2001562B3 /* WorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListView.swift; sourceTree = "<group>"; };
 		BB3C5FFF28F5202F00281635 /* FitnessTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3C600228F5202F00281635 /* FitnessTrackingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTrackingApp.swift; sourceTree = "<group>"; };
 		BB3C600428F5202F00281635 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				BB4204912905F9FA0087C04A /* HomeView.swift */,
 				BB5151D92918816D00F3ECA9 /* WorkoutView.swift */,
+				BB327273293426F2001562B3 /* WorkoutListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB327274293426F2001562B3 /* WorkoutListView.swift in Sources */,
 				7241C38D2916BFB900956CB0 /* SessionService.swift in Sources */,
 				7241C3902916EED500956CB0 /* LoginDetails.swift in Sources */,
 				BB4204942905FA100087C04A /* SignUpView.swift in Sources */,
