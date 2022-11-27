@@ -31,7 +31,7 @@ final class SignUpViewModelImpl: ObservableObject, SignUpViewModel{
     
     @Published var hasError: Bool = false
     
-    var details: SignUpDetails = SignUpDetails(email: "",
+    @Published var details: SignUpDetails = SignUpDetails(email: "",
                                                password: "",
                                                firstName: "",
                                                lastName: "")
