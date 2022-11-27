@@ -27,12 +27,12 @@ struct UserDataView: View {
             InputTextView(text: $UserDataVM.details.height, holder: "Height: ",keyboard: .default)
             InputTextView(text: $UserDataVM.details.weight, holder: "Weight: ",keyboard: .default)
             InputTextView(text: $UserDataVM.details.activity, holder: "Activity Level: ",keyboard: .default)
-            InputTextView(text: $UserDataVM.details.goal, holder: "Goal",keyboard: .goal)
+            InputTextView(text: $UserDataVM.details.goal, holder: "Goal",keyboard: .default)
             
-            InputPasswordView(password: $UserDataVM.details.password, holder: "Password")
+            InputPasswordView(password: $UserDataVM.details.goal, holder: "Password")
             
-            ButtonView(title: "Login"){
-                UserDataVM.login()
+            ButtonView(title: "Submit"){
+                UserDataVM.UserData()
             }
             
         }
