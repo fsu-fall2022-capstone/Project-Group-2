@@ -48,6 +48,8 @@ final class UserDataViewModelImpl: ObservableObject, UserDataViewModel{
             .assign(to: &$hasError)
     }
     
+    
+    //Change database for storage to userInfo
     private var subscriptions = Set<AnyCancellable>()
     
     func UserData(){

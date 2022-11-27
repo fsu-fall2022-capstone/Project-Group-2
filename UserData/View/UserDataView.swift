@@ -9,15 +9,29 @@ import Foundation
 import LocalAuthentication
 import SwiftUI
 import FirebaseAuth
+
+class Auth0ViewModel: ObservableObject{
     
+    let auth = Auth.auth()
+    
+    @Published var authorized = false
+    
+    var isSignedIn: Bool{
+        return auth.currentUser != nil
+    }
+}
+
 struct UserDataView: View {
-    
-    //@StateObject private var UserDataVM = UserDataModelImpl(service: UserDataServiceImpl())
+    @State private var showSignUp = false
     @StateObject private var UserDataVM = UserDataViewModelImpl(service: UserDataServiceImpl())
+    
+    
     var body: some View{
         //State private var showSignUp = false
         
-        VStack<UserDataView>{
+        
+        VStack{
+            
             Text("Tell us about yourself")
                 .font(.largeTitle)
                 .bold()
@@ -29,11 +43,10 @@ struct UserDataView: View {
             InputTextView(text: $UserDataVM.details.activity, holder: "Activity Level: ",keyboard: .default)
             InputTextView(text: $UserDataVM.details.goal, holder: "Goal",keyboard: .default)
             
-            InputPasswordView(password: $UserDataVM.details.goal, holder: "Password")
-            
             ButtonView(title: "Submit"){
                 UserDataVM.UserData()
             }
+         
             
         }
         .alert(isPresented: $UserDataVM.hasError,
