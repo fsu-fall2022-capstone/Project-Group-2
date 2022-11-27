@@ -2,12 +2,13 @@
 //  SessionService.swift
 //  FitnessTracking
 //
-//  Created by Annie Chow on 11/5/22.
+//  Created by Jalal Jean-Charles on 11/5/22.
 //
 
 import Foundation
 import Combine
 import FirebaseAuth
+import FirebaseDatabase
 
 enum SessionState{
     case loggedIn
@@ -15,14 +16,16 @@ enum SessionState{
 }
 
 protocol SessionService{
-    var state: SessionState { get}
-    //var userDetails: SessionUserDetails? { get}
+    var state: SessionState {get}
+    var userDetails: SessionDetails? {get}
+    init()
     func logout()
 }
 
 final class SessionServiceImpl: ObservableObject, SessionService {
     
     @Published var state: SessionState = .loggedOut
+    @Published var userDetails: SessionDetails?
     
     private var handler: AuthStateDidChangeListenerHandle?
     
@@ -34,7 +37,28 @@ final class SessionServiceImpl: ObservableObject, SessionService {
                 guard let self = self else { return}
                 self.state = user == nil ? .loggedOut : .loggedIn
                 if let uid = user?.uid{
-                    self.handleRefresh(with: uid)
+                    Database
+                        .database()
+                        .reference()
+                        .child("users")
+                        .child(uid)
+                        .observe(.value) { [weak self] snapshot in
+                            
+                            guard let self = self,
+                                  let value = snapshot.value as? NSDictionary,
+                                  let firstName = value[dbKeys.firstName.rawValue] as? String,
+                                  let lastName = value[dbKeys.lastName.rawValue] as? String
+                            else{
+                                return
+                            }
+                            
+                            
+                                  DispatchQueue.main.async{
+                                      self.userDetails = SessionDetails(firstName: firstName,
+                                                                        lastName: lastName)
+                                    }
+                            
+                        }
                 }
             }
     }
@@ -43,7 +67,5 @@ final class SessionServiceImpl: ObservableObject, SessionService {
         try? Auth.auth().signOut()
     }
     
-    func handleRefresh(with uid: String){
-        //Function will grab uid properties stored with firebase and assign to userdetails
-    }
+
 }

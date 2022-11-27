@@ -37,6 +37,7 @@ struct LogoutView: View {
 }
 
 struct HomeView: View {
+    @EnvironmentObject var sessionService: SessionServiceImpl
     
     var body: some View {
         TabView {

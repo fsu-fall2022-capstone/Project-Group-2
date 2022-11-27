@@ -2,7 +2,7 @@
 //  SignUpViewModel.swift
 //  FitnessTracking
 //
-//  Created by Annie Chow on 11/3/22.
+//  Created by Jalal Jean-Charles on 11/3/22.
 //
 
 import Foundation
@@ -16,9 +16,10 @@ enum SignUpState{
 
 protocol SignUpViewModel {
     func signup()
-    var service: SignUpService { get }
-    var state: SignUpState { get }
-    var details: SignUpDetails { get }
+    var service: SignUpService {get}
+    var state: SignUpState {get}
+    var details: SignUpDetails {get}
+    var hasError: Bool {get}
     init(service: SignUpService)
 }
 
@@ -26,14 +27,27 @@ final class SignUpViewModelImpl: ObservableObject, SignUpViewModel{
     
     let service: SignUpService
     
-    var state: SignUpState = .na
+    @Published var state: SignUpState = .na
     
-    var details: SignUpDetails = SignUpDetails(email: "",
+    @Published var hasError: Bool = false
+    
+    @Published var details: SignUpDetails = SignUpDetails(email: "",
                                                password: "",
                                                firstName: "",
                                                lastName: "")
     init(service: SignUpService){
         self.service = service
+        
+        $state
+            .map{ state -> Bool in
+                switch state {
+                case .successful, .na:
+                    return false
+                case .failed:
+                    return true
+                }
+            }
+            .assign(to: &$hasError)
     }
     
     private var subscriptions = Set<AnyCancellable>()
