@@ -29,7 +29,7 @@ final class UserDataViewModelImpl: ObservableObject, UserDataViewModel{
     
     @Published var state: UserDataState = .na
     @Published var hasError: Bool = false
-    @Published var details: UserDataDetails = UserDataDetails(gender: "", age: "25", height: "69", weight: "200", activity: "",  goal: "")
+    @Published var details: UserDataDetails = UserDataDetails(gender: "", age: "", height: "", weight: "", activity: "",  goal: "")
     
     let service: UserDataService
     
