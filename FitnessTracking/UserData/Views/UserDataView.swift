@@ -31,7 +31,6 @@ struct UserDataView: View {
         
         
         VStack{
-            
             Text("Tell us about yourself")
                 .font(.largeTitle)
                 .bold()
