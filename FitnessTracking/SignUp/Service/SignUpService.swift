@@ -40,7 +40,11 @@ final class SignUpImpl: SignUpService{
                         if let uid = result?.user.uid{
                             
                             let values = [dbKeys.firstName.rawValue: details.firstName,
-                                          dbKeys.lastName.rawValue: details.lastName] as [String : Any]
+                                          dbKeys.lastName.rawValue: details.lastName,
+                                          dbKeys.gender.rawValue: details.gender,
+                                          dbKeys.age.rawValue: details.age,
+                                          dbKeys.height.rawValue: details.height,
+                                          dbKeys.weight.rawValue: details.weight] as [String : Any]
                             
                             Database.database()
                                 .reference()

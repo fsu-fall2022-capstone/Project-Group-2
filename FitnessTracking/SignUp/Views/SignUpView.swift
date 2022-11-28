@@ -32,11 +32,27 @@ struct SignUpView: View {
                     
                     Divider()
                     
+                }
+                VStack{
+                    Text("User Details")
+                        .font(.largeTitle)
+                        .bold()
+                        .padding()
                     InputTextView(text: $signupVM.details.firstName, holder: "First Name", keyboard: .default)
                     
                     InputTextView(text: $signupVM.details.lastName, holder: "Last Name", keyboard: .default)
                     
+                    InputTextView(text: $signupVM.details.age, holder: "Age", keyboard: .default)
                     
+                    InputTextView(text: $signupVM.details.gender, holder: "Gender",
+                                  keyboard: .emailAddress)
+                    
+                    Divider()
+                    
+                    InputTextView(text: $signupVM.details.height, holder: "Height (cm)" , keyboard: .default)
+                    
+                    
+                    InputTextView(text: $signupVM.details.weight, holder: "Weight (lbs)" , keyboard: .default)
                 }
                 
                 ButtonView(title: "Sign Up"){

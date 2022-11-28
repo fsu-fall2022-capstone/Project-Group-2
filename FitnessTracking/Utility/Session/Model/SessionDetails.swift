@@ -10,4 +10,8 @@ import Foundation
 struct SessionDetails{
     let firstName: String
     let lastName: String
+    let gender: String
+    let age: String 
+    let height: String
+    let weight: String
 }

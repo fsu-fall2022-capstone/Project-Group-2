@@ -47,17 +47,23 @@ final class SessionServiceImpl: ObservableObject, SessionService {
                             guard let self = self,
                                   let value = snapshot.value as? NSDictionary,
                                   let firstName = value[dbKeys.firstName.rawValue] as? String,
-                                  let lastName = value[dbKeys.lastName.rawValue] as? String
+                                  let lastName = value[dbKeys.lastName.rawValue] as? String,
+                                  let gender = value[dbKeys.gender.rawValue] as? String,
+                                  let age = value[dbKeys.age.rawValue] as? String,
+                                  let height = value[dbKeys.height.rawValue] as? String,
+                                  let weight = value[dbKeys.weight.rawValue] as? String
                             else{
                                 return
                             }
                             
-                            
                                   DispatchQueue.main.async{
                                       self.userDetails = SessionDetails(firstName: firstName,
-                                                                        lastName: lastName)
+                                                                        lastName: lastName,
+                                                                        gender: gender,
+                                                                        age: age,
+                                                                        height: height,
+                                                                        weight: weight)
                                     }
-                            
                         }
                 }
             }
