@@ -13,6 +13,10 @@ import Firebase
 enum dbKeys: String{
     case firstName
     case lastName
+    case gender
+    case age
+    case height
+    case weight
 }
 
 protocol SignUpService {

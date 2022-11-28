@@ -12,4 +12,8 @@ struct SignUpDetails{
     var password: String
     var firstName: String
     var lastName: String
+    var gender : String
+    var age : String
+    var height : String
+    var weight : String
 }

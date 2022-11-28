@@ -32,9 +32,13 @@ final class SignUpViewModelImpl: ObservableObject, SignUpViewModel{
     @Published var hasError: Bool = false
     
     @Published var details: SignUpDetails = SignUpDetails(email: "",
-                                               password: "",
-                                               firstName: "",
-                                               lastName: "")
+                                                          password: "",
+                                                          firstName: "",
+                                                          lastName: "",
+                                                          gender: "",
+                                                          age: "",
+                                                          height: "",
+                                                          weight: "")
     init(service: SignUpService){
         self.service = service
         
