@@ -6,9 +6,7 @@
 //
 
 import Foundation
-import Foundation
 import Combine
-
 
 enum UserDataState{
     case successful
@@ -27,11 +25,17 @@ protocol UserDataViewModel {
 
 final class UserDataViewModelImpl: ObservableObject, UserDataViewModel{
     
-    @Published var state: UserDataState = .na
-    @Published var hasError: Bool = false
-    @Published var details: UserDataDetails = UserDataDetails(gender: "", age: "", height: "", weight: "", activity: "",  goal: "")
-    
     let service: UserDataService
+    
+    @Published var state: UserDataState = .na
+    
+    @Published var hasError: Bool = false
+    
+    @Published var details: UserDataDetails = UserDataDetails(gender: "",
+                                               age: "",
+                                               height: "",
+                                               weight: "",
+                                               activity: "", goal: "")
     init(service: UserDataService){
         self.service = service
         
@@ -47,11 +51,10 @@ final class UserDataViewModelImpl: ObservableObject, UserDataViewModel{
             .assign(to: &$hasError)
     }
     
-    
-    //Change database for storage to userInfo
     private var subscriptions = Set<AnyCancellable>()
     
-    func UserData(){
+    func UserData() {
+        
         service
             .UserData(with: details)
             .sink { res in
