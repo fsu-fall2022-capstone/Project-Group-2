@@ -14,14 +14,29 @@ struct DietView: View {
 }
 
 struct ProfileView: View {
+    @EnvironmentObject var sessionService: SessionServiceImpl
     var body: some View {
         Text("Fitness Profile")
     }
 }
 
 struct SettingsView: View {
+    @EnvironmentObject var sessionService: SessionServiceImpl
     var body: some View {
+       
         Text("Settings")
+        
+        Text("Age: ")
+        Text("Gender: ")
+        Text("Height: ")
+        Text("Weight: ")
+        Text("Activity Level: ")
+        Text("Goal: ")
+        
+        ButtonView(title: "Update Changes"){
+            sessionService.logout()
+        }
+        
     }
 }
 
@@ -56,6 +71,7 @@ struct HomeView: View {
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
+                    
                 }
             LogoutView()
                 .tabItem{
