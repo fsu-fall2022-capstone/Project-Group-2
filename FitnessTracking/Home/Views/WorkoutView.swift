@@ -4,13 +4,16 @@
 //
 //  Created by Matthew Kolnicki on 11/6/22.
 //
-
+// testing a commit cause this is so gahdayum buggy
 import SwiftUI
 
 struct WorkoutView: View {
+    
+    let workouts = workoutsData
+    
     var body: some View {
         NavigationView {
-            VStack {
+            VStack (alignment: .leading) {
                 ZStack{
                     Image("arm-workout.jpg")
                         .resizable()
@@ -35,7 +38,8 @@ struct WorkoutView: View {
                 .frame(width:380, height:300)
                 .cornerRadius(20)
                 .shadow(radius: 8)
-                .padding(.top, 20)
+                //.padding(.top, 20)
+                .padding()
                 .clipped()
                 
                 
@@ -47,33 +51,38 @@ struct WorkoutView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         
-                        ForEach(0 ..< 5){ item in
+                        ForEach(workouts){ workout in
                             // Day card
-                            ZStack {
-                                Image("leg-workout.jpg")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 380, height:220)
-                                
-                                VStack{
-                                    Spacer()
-                                    Text("Monday")
-                                        .font(.largeTitle)
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                    Text("Legs")
-                                        .foregroundColor(.white)
+                            
+                            NavigationLink(destination: Text(workout.day)){
+                                ZStack {
+                                    Image(workout.image)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 380, height:220)
+                                    
+                                    VStack{
+                                        Spacer()
+                                        Text(workout.day)
+                                            .font(.largeTitle)
+                                            .fontWeight(.semibold)
+                                            .foregroundColor(.white)
+                                        Text(workout.bodyPart)
+                                            .foregroundColor(.white)
+                                    }
+                                    .padding()
+                                    .frame(width: 380)
                                 }
-                                .padding()
-                                .frame(width: 380)
+                                .frame(width: 150, height: 220)
+                                .clipped()
+                                .cornerRadius(20)
+                                .shadow(radius: 10)
                             }
-                            .frame(width: 150, height: 220)
-                            .clipped()
-                            .cornerRadius(20)
-                            .shadow(radius: 10)
                         }
                     }
                 }
+                .padding()
+                .offset(x: 0, y: -35)
                 Spacer()
             }
             .navigationBarTitle("Workouts")
@@ -86,3 +95,23 @@ struct Workout_Previews: PreviewProvider {
         WorkoutView()
     }
 }
+
+
+
+
+struct Workout: Identifiable{
+    var id = UUID()
+    
+    var day: String
+    var bodyPart: String
+    var image: String
+    var routine: [String]
+}
+
+let workoutsData = [
+    Workout(day: "Monday", bodyPart: "Chest", image: "leg-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"]),
+    Workout(day: "Tuesday", bodyPart: "Legs", image: "dumbbells.jpg", routine: ["Warmup", "Squats", "Cool Down"]),
+    Workout(day: "Wednesday", bodyPart: "Back", image: "pullups.jpg", routine: ["Warmup", "Pull-ups", "Cool Down"]),
+    Workout(day: "Thursday", bodyPart: "Abs", image: "dumbbells.jpg", routine: ["Warmup", "Planks", "Cool Down"]),
+    Workout(day: "Friday", bodyPart: "Arms", image: "pullups.jpg", routine: ["Warmup", "Curls", "Cool Down"])
+]
