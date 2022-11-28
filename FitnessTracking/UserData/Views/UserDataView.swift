@@ -26,9 +26,9 @@ struct UserDataView: View {
                         .bold()
                         .padding()
                     InputTextView(text: $UserDataVM.details.gender, holder: "Gender",
-                                  keyboard: .emailAddress)
+                                  keyboard: .default)
                     
-                    InputPasswordView(password: $UserDataVM.details.height, holder: "Height in inches")
+                    InputTextView(text: $UserDataVM.details.height, holder: "Height in inches", keyboard: .default)
                     
                     Divider()
                     
