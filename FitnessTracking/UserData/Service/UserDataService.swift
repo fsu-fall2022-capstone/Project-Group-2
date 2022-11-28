@@ -22,10 +22,12 @@ protocol UserDataService {
 
 final class UserDataImpl: UserDataService{
     
-    func UserData(with details: UserDataDetails) -> AnyPublisher<Void, Error>{
+    func UserData(with details: UserDataDetails)  -> AnyPublisher<Void, Error>{
       
+        //we are sending user details here store in database
+        
         Deferred{
-            
+            //Help create new user in database with entered values here
             Future { promise in
                 Auth.auth().createUser(withEmail: details.gender,
                                        password: details.height) { result, error in
@@ -68,4 +70,5 @@ final class UserDataImpl: UserDataService{
         .eraseToAnyPublisher()
      
     }
+         
 }
