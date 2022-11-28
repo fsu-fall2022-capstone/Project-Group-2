@@ -13,6 +13,7 @@ struct DietView: View {
     }
 }
 
+
 struct ProfileView: View {
     var body: some View {
         Text("Fitness Profile")
@@ -45,7 +46,7 @@ struct HomeView: View {
                 .tabItem {
                     Label("Workouts", systemImage: "figure.cooldown")
                 }
-            DietView()
+            Diet()
                 .tabItem {
                     Label("Diet", systemImage: "fork.knife")
                 }
