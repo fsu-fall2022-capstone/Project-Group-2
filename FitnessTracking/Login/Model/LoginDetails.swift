@@ -2,7 +2,7 @@
 //  LoginDetails.swift
 //  FitnessTracking
 //
-//  Created by Jalal Jean-Charles on 11/5/22.
+//  Created by Jalal Jean-Charles on 11/5/22.     nb
 //
 
 import Foundation

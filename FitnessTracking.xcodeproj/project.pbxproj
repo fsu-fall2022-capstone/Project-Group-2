@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033E98D329341E4800C230D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E98D129341E4700C230D4 /* SettingsView.swift */; };
+		033E98D429341F1100C230D4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E98D029341E4700C230D4 /* ProfileView.swift */; };
 		7241C37D29138C3400956CB0 /* SignUpDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C37C29138C3400956CB0 /* SignUpDetails.swift */; };
 		7241C38029138CC700956CB0 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C37F29138CC700956CB0 /* SignUpService.swift */; };
 		7241C38329138ED400956CB0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 7241C38229138ED400956CB0 /* FirebaseDatabase */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		033E98D029341E4700C230D4 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		033E98D129341E4700C230D4 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7241C37C29138C3400956CB0 /* SignUpDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetails.swift; sourceTree = "<group>"; };
 		7241C37F29138CC700956CB0 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		7241C3852913989000956CB0 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 		7241C3792913861800956CB0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				033E98D029341E4700C230D4 /* ProfileView.swift */,
+				033E98D129341E4700C230D4 /* SettingsView.swift */,
 				BB4204912905F9FA0087C04A /* HomeView.swift */,
 				BB5151D92918816D00F3ECA9 /* WorkoutView.swift */,
 			);
@@ -413,6 +419,8 @@
 				7241C38029138CC700956CB0 /* SignUpService.swift in Sources */,
 				72F599BB29134B7E00BE29EE /* ButtonView.swift in Sources */,
 				7241C3932916EF4000956CB0 /* LoginService.swift in Sources */,
+				033E98D429341F1100C230D4 /* ProfileView.swift in Sources */,
+				033E98D329341E4800C230D4 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

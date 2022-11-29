@@ -13,18 +13,6 @@ struct DietView: View {
     }
 }
 
-struct ProfileView: View {
-    var body: some View {
-        Text("Fitness Profile")
-    }
-}
-
-struct SettingsView: View {
-    var body: some View {
-        Text("Settings")
-    }
-}
-
 struct LogoutView: View {
     @EnvironmentObject var sessionService: SessionServiceImpl
     var body: some View{
