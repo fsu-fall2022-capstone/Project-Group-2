@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03427643293594620047A6EE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03427642293594610047A6EE /* ProfileView.swift */; };
 		1DD6927B2934831100281C0B /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6927A2934831100281C0B /* DietView.swift */; };
 		7241C37D29138C3400956CB0 /* SignUpDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C37C29138C3400956CB0 /* SignUpDetails.swift */; };
 		7241C38029138CC700956CB0 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C37F29138CC700956CB0 /* SignUpService.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03427642293594610047A6EE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1DD6927A2934831100281C0B /* DietView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
 		7241C37C29138C3400956CB0 /* SignUpDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetails.swift; sourceTree = "<group>"; };
 		7241C37F29138CC700956CB0 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				1DD6927A2934831100281C0B /* DietView.swift */,
+				03427642293594610047A6EE /* ProfileView.swift */,
 				BB4204912905F9FA0087C04A /* HomeView.swift */,
 				BB5151D92918816D00F3ECA9 /* WorkoutView.swift */,
 				726E3F8029356DBB00A5E11B /* SettingsView.swift */,
@@ -416,6 +419,7 @@
 				BB4204922905F9FA0087C04A /* HomeView.swift in Sources */,
 				AAE977BD2933CD3400C545ED /* UserDataService.swift in Sources */,
 				BB3C600528F5202F00281635 /* LoginView.swift in Sources */,
+				03427643293594620047A6EE /* ProfileView.swift in Sources */,
 				BB3C600328F5202F00281635 /* FitnessTrackingApp.swift in Sources */,
 				7241C38029138CC700956CB0 /* SignUpService.swift in Sources */,
 				72F599BB29134B7E00BE29EE /* ButtonView.swift in Sources */,
