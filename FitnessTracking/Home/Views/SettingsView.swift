@@ -20,8 +20,8 @@ struct SettingsView: View {
                 Text("Last Name: \(sessionService.userDetails?.lastName ?? "N/A")")
                 Text("Gender: \(sessionService.userDetails?.gender ?? "N/A")")
                 Text("Age: \(sessionService.userDetails?.age ?? "N/A")")
-                Text("Height: \(sessionService.userDetails?.height ?? "N/A")")
-                Text("Weight: \(sessionService.userDetails?.weight ?? "N/A")")
+                Text("Height: \(sessionService.userDetails?.height ?? "N/A")in")
+                Text("Weight: \(sessionService.userDetails?.weight ?? "N/A")lbs")
             }
         }
         

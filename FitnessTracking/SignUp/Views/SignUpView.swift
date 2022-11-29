@@ -49,7 +49,7 @@ struct SignUpView: View {
                     
                     Divider()
                     
-                    InputTextView(text: $signupVM.details.height, holder: "Height (cm)" , keyboard: .default)
+                    InputTextView(text: $signupVM.details.height, holder: "Height (in)" , keyboard: .default)
                     
                     
                     InputTextView(text: $signupVM.details.weight, holder: "Weight (lbs)" , keyboard: .default)
