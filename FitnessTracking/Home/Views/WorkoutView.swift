@@ -149,13 +149,13 @@ struct Workout: Identifiable{
 
 
 let workoutsNormalData = [
-    Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"]),
-    Workout(day: "Tuesday", image: "dumbbells.jpg", routine: ["Warmup", "Squats", "Cool Down"]),
-    Workout(day: "Wednesday", image: "pullups.jpg", routine: ["Warmup", "Pull-ups", "Cool Down"]),
-    Workout(day: "Thursday", image: "dumbbells.jpg", routine: ["Warmup", "Planks", "Cool Down"]),
-    Workout(day: "Friday", image: "rope", routine: ["Warmup", "Curls", "Cool Down"]),
-    Workout(day: "Saturday", image: "body", routine: ["Warmup", "Curls", "Cool Down"]),
-    Workout(day: "Sunday", image: "fight", routine: ["Warmup", "Curls", "Cool Down"])
+    Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Bench Press: warmups: 10 reps: 25%, 6 reps, 40%, 50%", " 4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%, 1 Rep 100%, 1 Rep 101% ", "Delt raises, heaviest weight for reps, 30,20,15,10"]),
+    Workout(day: "Tuesday", image: "dumbbells.jpg", routine: ["Jump rope 30 minutes, 200 Crunches", "Sprints: 100 meters, 12 reps", "Hit 10k steps"]),
+    Workout(day: "Wednesday", image: "pullups.jpg", routine: ["DeadLift Warmups: 10 reps: 25%, 6 reps", "4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%, 1 Rep 100%, 1 Rep 101% ", "Delt raises, heaviest weight for reps, 30,20,15,10"]),
+    Workout(day: "Thursday", image: "dumbbells.jpg", routine: ["Dumbell Bicep curls, Dumbell Shoulder Press: 10 reps: 25%, 6 reps, 40%, 50%", "Dumbell Bicep curls, Dumbell Shoulder Press, 4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%, 1 Rep 100%, 1 Rep 101%", "Headcrushers 60% max, bench and tricep extension burnout to failure"]),
+    Workout(day: "Friday", image: "rope", routine: ["Squat Warmups: 10 reps: 25%, 6 reps", "4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%, 1 Rep 100%, 1 Rep 101%", "Delt raises, heaviest weight for reps, 30,20,15,10"]),
+    Workout(day: "Saturday", image: "body", routine: ["Bench Press: warmups: 10 reps: 25%, 6 reps, 40%, 50%", "6 reps, 40%, 50%", " 4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%", "Delt raises, heaviest weight for reps, 30,20,15,10"]),
+    Workout(day: "Sunday", image: "fight", routine: ["Jump rope 30 minutes, 200 Crunches", "Jog 7 miles", "Ice Bath"])
 ]
 let workoutsOverweightData = [
     Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Sprints: 100 meters, 12 reps", "100 pushups and situps", "Log 15k steps"]),
