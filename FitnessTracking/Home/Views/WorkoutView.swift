@@ -166,14 +166,15 @@ let workoutsOverweightData = [
     Workout(day: "Saturday", image: "body", routine: ["5 mile jog", "Asisted pullups:30 Assisted chinups:30", "Log 15k steps"]),
     Workout(day: "Sunday", image: "fight", routine: ["Jump rope 1 hour, 3 minute inc, 2 min rest", "Curls: 10 sets, 6 reps, maxmum intensity", "Log 15k steps"])
 ]
+
 let workoutsUnderweightData = [
-    Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"]),
-    Workout(day: "Tuesday", image: "dumbbells.jpg", routine: ["Warmup", "Squats", "Cool Down"]),
-    Workout(day: "Wednesday", image: "pullups.jpg", routine: ["Warmup", "Pull-ups", "Cool Down"]),
-    Workout(day: "Thursday", image: "dumbbells.jpg", routine: ["Warmup", "Planks", "Cool Down"]),
-    Workout(day: "Friday", image: "rope", routine: ["Warmup", "Curls", "Cool Down"]),
-    Workout(day: "Saturday", image: "body", routine: ["Warmup", "Curls", "Cool Down"]),
-    Workout(day: "Sunday", image: "fight", routine: ["Warmup", "Curls", "Cool Down"])
+    Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Intra Workout Shake: Fill Jug with 200 grams of carbs, 100 grams of whey, sip between sets","Bench Press warmups: 10 reps: 25%, 6 reps, 40%, 50%", "Bench Press Workout: 4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%, 1 Rep 100%, 1 Rep 101% ", "Delt raises, heaviest weight for reps, 30,20,15,10"]),
+    Workout(day: "Tuesday", image: "dumbbells.jpg", routine: ["Intra Workout Shake: Fill Jug with 200 grams of carbs, 100 grams of whey, sip between sets", "Clean Warmup: 10 reps: 25%, 6 reps","Clean Workout: 4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%, 1 Rep 100%, 1 Rep 101%", "Shoulder press with Maximum weight you can do reps, 30, 20, 15, 10, 5, 3",]),
+    Workout(day: "Wednesday", image: "pullups.jpg", routine: ["Intra Workout Shake: Fill Jug with 200 grams of carbs","DeadLift Warmups: 10 reps: 25%, 6 reps", "4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%, 1 Rep 100%, 1 Rep 101% ", "Delt raises, heaviest weight for reps, 30,20,15,10"]),
+    Workout(day: "Thursday", image: "dumbbells.jpg", routine: ["Intra Workout Shake: Fill Jug with 200 grams of carbs", "Dumbell Bicep curls, Dumbell Shoulder Press: 10 reps: 25%, 6 reps, 40%, 50%", "Dumbell Bicep curls, Dumbell Shoulder Press, 4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%, 1 Rep 100%, 1 Rep 101%", "Headcrushers 60% max, bench and tricep extension burnout to failure"]),
+    Workout(day: "Friday", image: "rope", routine: ["Intra Workout Shake: Fill Jug with 200 grams of carbs", "Squat Warmups: 10 reps: 25%, 6 reps", "4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%, 1 Rep 100%, 1 Rep 101%", "Delt raises, heaviest weight for reps, 30,20,15,10"]),
+    Workout(day: "Saturday", image: "body", routine: ["Intra Workout Shake: Fill Jug with 200 grams of carbs", "Bench Press: warmups: 10 reps: 25%, 6 reps, Bench Press Workout: 40%, 50%", "6 reps, 40%, 50%", " 4 Rep 60%,70%, || 2 Rep 80%,90% || 1 Rep 95%", "Delt raises, heaviest weight for reps, 30,20,15,10"]),
+    Workout(day: "Sunday", image: "fight", routine: ["Intra Workout Shake: Fill Jug with 200 grams of carbs", "Sprints: 20 meters, 30 reps", "Ice Bath"])
 ]
 let fullBodyWorkout = [
     Workout(day: "Full Body", image: "arm-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"])
