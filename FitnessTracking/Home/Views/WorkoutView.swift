@@ -4,14 +4,21 @@
 //
 //  Created by Matthew Kolnicki on 11/6/22.
 //
-// testing a commit cause this is so gahdayum buggy
 import SwiftUI
 
 struct WorkoutView: View {
     
-    let workouts = workoutsData
+    let NormalWorkouts = workoutsNormalData
+    let OverweightWorkouts = workoutsOverweightData
+    let UnderweightWorkouts = workoutsUnderweightData
+    
+    @EnvironmentObject var sessionService: SessionServiceImpl
     
     var body: some View {
+        let StringWeight = sessionService.userDetails?.weight ?? "N/A"
+        let weight = Int(StringWeight) ?? 0
+
+    
         NavigationView {
             VStack (alignment: .leading) {
                 ZStack{
@@ -26,8 +33,6 @@ struct WorkoutView: View {
                         Text("Full Body")
                             .font(.largeTitle)
                             .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                        Text("Placeholder text")
                             .foregroundColor(.white)
                         
                     }
@@ -51,32 +56,60 @@ struct WorkoutView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         
-                        ForEach(workouts){ workout in
-                            // Day card
-                            
-                            NavigationLink(destination: Text(workout.day)){
-                                ZStack {
-                                    Image(workout.image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 380, height:220)
-                                    
-                                    VStack{
-                                        Spacer()
-                                        Text(workout.day)
-                                            .font(.largeTitle)
-                                            .fontWeight(.semibold)
-                                            .foregroundColor(.white)
-                                        Text(workout.bodyPart)
-                                            .foregroundColor(.white)
+                        if weight < 100{
+                            ForEach(NormalWorkouts){ workout in
+                                // Day card
+                                
+                                NavigationLink(destination: WorkoutDetailsView(workout: workout)){
+                                    ZStack {
+                                        Image(workout.image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 380, height:220)
+                                        
+                                        VStack{
+                                            Spacer()
+                                            Text(workout.day)
+                                                .font(.largeTitle)
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding()
+                                        .frame(width: 380)
                                     }
-                                    .padding()
-                                    .frame(width: 380)
+                                    .frame(width: 150, height: 220)
+                                    .clipped()
+                                    .cornerRadius(20)
+                                    .shadow(radius: 10)
                                 }
-                                .frame(width: 150, height: 220)
-                                .clipped()
-                                .cornerRadius(20)
-                                .shadow(radius: 10)
+                            }
+                        }
+                        else{
+                            ForEach(OverweightWorkouts){ workout in
+                                // Day card
+                                
+                                NavigationLink(destination: WorkoutDetailsView(workout: workout)){
+                                    ZStack {
+                                        Image(workout.image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 380, height:220)
+                                        
+                                        VStack{
+                                            Spacer()
+                                            Text(workout.day)
+                                                .font(.largeTitle)
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding()
+                                        .frame(width: 380)
+                                    }
+                                    .frame(width: 150, height: 220)
+                                    .clipped()
+                                    .cornerRadius(20)
+                                    .shadow(radius: 10)
+                                }
                             }
                         }
                     }
@@ -103,15 +136,35 @@ struct Workout: Identifiable{
     var id = UUID()
     
     var day: String
-    var bodyPart: String
     var image: String
     var routine: [String]
 }
 
-let workoutsData = [
-    Workout(day: "Monday", bodyPart: "Chest", image: "leg-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"]),
-    Workout(day: "Tuesday", bodyPart: "Legs", image: "dumbbells.jpg", routine: ["Warmup", "Squats", "Cool Down"]),
-    Workout(day: "Wednesday", bodyPart: "Back", image: "pullups.jpg", routine: ["Warmup", "Pull-ups", "Cool Down"]),
-    Workout(day: "Thursday", bodyPart: "Abs", image: "dumbbells.jpg", routine: ["Warmup", "Planks", "Cool Down"]),
-    Workout(day: "Friday", bodyPart: "Arms", image: "pullups.jpg", routine: ["Warmup", "Curls", "Cool Down"])
+
+let workoutsNormalData = [
+    Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"]),
+    Workout(day: "Tuesday", image: "dumbbells.jpg", routine: ["Warmup", "Squats", "Cool Down"]),
+    Workout(day: "Wednesday", image: "pullups.jpg", routine: ["Warmup", "Pull-ups", "Cool Down"]),
+    Workout(day: "Thursday", image: "dumbbells.jpg", routine: ["Warmup", "Planks", "Cool Down"]),
+    Workout(day: "Friday", image: "rope", routine: ["Warmup", "Curls", "Cool Down"]),
+    Workout(day: "Saturday", image: "body", routine: ["Warmup", "Curls", "Cool Down"]),
+    Workout(day: "Sunday", image: "fight", routine: ["Warmup", "Curls", "Cool Down"])
+]
+let workoutsOverweightData = [
+    Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"]),
+    Workout(day: "Tuesday", image: "dumbbells.jpg", routine: ["Warmup", "Squats", "Cool Down"]),
+    Workout(day: "Wednesday", image: "pullups.jpg", routine: ["Warmup", "Pull-ups", "Cool Down"]),
+    Workout(day: "Thursday", image: "dumbbells.jpg", routine: ["Warmup", "Planks", "Cool Down"]),
+    Workout(day: "Friday", image: "rope", routine: ["Warmup", "Curls", "Cool Down"]),
+    Workout(day: "Saturday", image: "body", routine: ["Warmup", "Curls", "Cool Down"]),
+    Workout(day: "Sunday", image: "fight", routine: ["Warmup", "Curls", "Cool Down"])
+]
+let workoutsUnderweightData = [
+    Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"]),
+    Workout(day: "Tuesday", image: "dumbbells.jpg", routine: ["Warmup", "Squats", "Cool Down"]),
+    Workout(day: "Wednesday", image: "pullups.jpg", routine: ["Warmup", "Pull-ups", "Cool Down"]),
+    Workout(day: "Thursday", image: "dumbbells.jpg", routine: ["Warmup", "Planks", "Cool Down"]),
+    Workout(day: "Friday", image: "rope", routine: ["Warmup", "Curls", "Cool Down"]),
+    Workout(day: "Saturday", image: "body", routine: ["Warmup", "Curls", "Cool Down"]),
+    Workout(day: "Sunday", image: "fight", routine: ["Warmup", "Curls", "Cool Down"])
 ]
