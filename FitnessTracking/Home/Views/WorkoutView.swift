@@ -158,13 +158,13 @@ let workoutsNormalData = [
     Workout(day: "Sunday", image: "fight", routine: ["Warmup", "Curls", "Cool Down"])
 ]
 let workoutsOverweightData = [
-    Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"]),
-    Workout(day: "Tuesday", image: "dumbbells.jpg", routine: ["Warmup", "Squats", "Cool Down"]),
-    Workout(day: "Wednesday", image: "pullups.jpg", routine: ["Warmup", "Pull-ups", "Cool Down"]),
-    Workout(day: "Thursday", image: "dumbbells.jpg", routine: ["Warmup", "Planks", "Cool Down"]),
-    Workout(day: "Friday", image: "rope", routine: ["Warmup", "Curls", "Cool Down"]),
-    Workout(day: "Saturday", image: "body", routine: ["Warmup", "Curls", "Cool Down"]),
-    Workout(day: "Sunday", image: "fight", routine: ["Warmup", "Curls", "Cool Down"])
+    Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Sprints: 100 meters, 12 reps", "100 pushups and situps", "Log 15k steps"]),
+    Workout(day: "Tuesday", image: "dumbbells.jpg", routine: ["5 mile jog", "Asisted pullups: 30 Assisted chinups 30", "Log 15k steps"]),
+    Workout(day: "Wednesday", image: "pullups.jpg", routine: ["Sprints 100 meters, 12 reps", "100 pushups and situps", "Log 15k steps"]),
+    Workout(day: "Thursday", image: "dumbbells.jpg", routine: ["5 mile jog", "Asisted pullups:30 Assisted chinups:30", "Log 15k steps"]),
+    Workout(day: "Friday", image: "rope", routine: ["Sprints: 100 meters, 12 reps", "100 pushups and situps", "Log 15k steps"]),
+    Workout(day: "Saturday", image: "body", routine: ["5 mile jog", "Asisted pullups:30 Assisted chinups:30", "Log 15k steps"]),
+    Workout(day: "Sunday", image: "fight", routine: ["Jump rope 1 hour, 3 minute inc, 2 min rest", "Curls: 10 sets, 6 reps, maxmum intensity", "Log 15k steps"])
 ]
 let workoutsUnderweightData = [
     Workout(day: "Monday", image: "leg-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"]),
