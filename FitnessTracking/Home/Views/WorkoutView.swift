@@ -11,41 +11,48 @@ struct WorkoutView: View {
     let NormalWorkouts = workoutsNormalData
     let OverweightWorkouts = workoutsOverweightData
     let UnderweightWorkouts = workoutsUnderweightData
+    let fullBody = fullBodyWorkout
     
     @EnvironmentObject var sessionService: SessionServiceImpl
     
     var body: some View {
         let StringWeight = sessionService.userDetails?.weight ?? "N/A"
         let weight = Int(StringWeight) ?? 0
+        let randomInt = Int.random(in: 1..<7)
 
     
         NavigationView {
             VStack (alignment: .leading) {
-                ZStack{
-                    Image("arm-workout.jpg")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height:300)
-                    //vertical stack
-                    
-                    VStack{
-                        Spacer()
-                        Text("Full Body")
-                            .font(.largeTitle)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                        
+                
+                ForEach(fullBody) { workout in
+                    NavigationLink(destination: WorkoutDetailsView(workout: workout)){
+                        ZStack{
+                            Image("arm-workout.jpg")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(height:300)
+                            //vertical stack
+                            
+                            VStack{
+                                Spacer()
+                                Text("Full Body")
+                                    .font(.largeTitle)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                
+                            }
+                            .padding()
+                            .frame(width: 380)
+                            //.background(Color(UIColor.systemGray))
+                        }
+                        .frame(width:380, height:300)
+                        .cornerRadius(20)
+                        .shadow(radius: 8)
+                        //.padding(.top, 20)
+                        .padding()
+                        .clipped()
                     }
-                    .padding()
-                    .frame(width: 380)
-                    //.background(Color(UIColor.systemGray))
                 }
-                .frame(width:380, height:300)
-                .cornerRadius(20)
-                .shadow(radius: 8)
-                //.padding(.top, 20)
-                .padding()
-                .clipped()
                 
                 
                 Text("Daily Workouts")
@@ -167,4 +174,7 @@ let workoutsUnderweightData = [
     Workout(day: "Friday", image: "rope", routine: ["Warmup", "Curls", "Cool Down"]),
     Workout(day: "Saturday", image: "body", routine: ["Warmup", "Curls", "Cool Down"]),
     Workout(day: "Sunday", image: "fight", routine: ["Warmup", "Curls", "Cool Down"])
+]
+let fullBodyWorkout = [
+    Workout(day: "Full Body", image: "arm-workout.jpg", routine: ["Warmup", "Push-ups", "Cool Down"])
 ]
