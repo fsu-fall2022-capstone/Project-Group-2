@@ -17,6 +17,7 @@ enum dbKeys: String{
     case age
     case height
     case weight
+    case bmi
 }
 
 protocol SignUpService {
@@ -39,12 +40,17 @@ final class SignUpImpl: SignUpService{
                         
                         if let uid = result?.user.uid{
                             
+                            let fWeight = Float(details.weight) ?? 0.00
+                            let fHeight = Float(details.height) ?? 0.00
+                            let bmi = (fWeight / ((fHeight) * (fHeight))) * 703.0
+                            
                             let values = [dbKeys.firstName.rawValue: details.firstName,
                                           dbKeys.lastName.rawValue: details.lastName,
                                           dbKeys.gender.rawValue: details.gender,
                                           dbKeys.age.rawValue: details.age,
                                           dbKeys.height.rawValue: details.height,
-                                          dbKeys.weight.rawValue: details.weight] as [String : Any]
+                                          dbKeys.weight.rawValue: details.weight,
+                                          dbKeys.bmi.rawValue: String(bmi)] as [String : Any]
                             
                             Database.database()
                                 .reference()

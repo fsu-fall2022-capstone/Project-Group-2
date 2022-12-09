@@ -38,7 +38,8 @@ final class SignUpViewModelImpl: ObservableObject, SignUpViewModel{
                                                           gender: "",
                                                           age: "",
                                                           height: "",
-                                                          weight: "")
+                                                          weight: "",
+                                                          bmi: 0.00)
     init(service: SignUpService){
         self.service = service
         

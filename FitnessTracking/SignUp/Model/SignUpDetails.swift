@@ -16,4 +16,5 @@ struct SignUpDetails{
     var age : String
     var height : String
     var weight : String
+    var bmi : Float
 }
