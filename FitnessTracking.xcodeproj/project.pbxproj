@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		03427643293594620047A6EE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03427642293594610047A6EE /* ProfileView.swift */; };
 		1DD6927B2934831100281C0B /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6927A2934831100281C0B /* DietView.swift */; };
-		1DE2D534293944DC00B6986A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DE2D533293944DC00B6986A /* GoogleService-Info.plist */; };
 		7241C37D29138C3400956CB0 /* SignUpDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C37C29138C3400956CB0 /* SignUpDetails.swift */; };
 		7241C38029138CC700956CB0 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C37F29138CC700956CB0 /* SignUpService.swift */; };
 		7241C38329138ED400956CB0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 7241C38229138ED400956CB0 /* FirebaseDatabase */; };
@@ -20,6 +19,10 @@
 		7241C3932916EF4000956CB0 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C3922916EF4000956CB0 /* LoginService.swift */; };
 		7241C3962916F3F000956CB0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7241C3952916F3F000956CB0 /* LoginViewModel.swift */; };
 		726E3F8129356DBB00A5E11B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E3F8029356DBB00A5E11B /* SettingsView.swift */; };
+		726E3F872942E78500A5E11B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 726E3F862942E78500A5E11B /* GoogleService-Info.plist */; };
+		726E3F8B294304A000A5E11B /* ForgotPasswordService .swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E3F8A294304A000A5E11B /* ForgotPasswordService .swift */; };
+		726E3F8E2943071200A5E11B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E3F8D2943071200A5E11B /* ForgotPasswordViewModel.swift */; };
+		726E3F912943106000A5E11B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E3F902943106000A5E11B /* ForgotPasswordView.swift */; };
 		72F599B02912575800BE29EE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 72F599AF2912575800BE29EE /* FirebaseAuth */; };
 		72F599B22912575800BE29EE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 72F599B12912575800BE29EE /* FirebaseStorage */; };
 		72F599B72913474300BE29EE /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F599B62913474300BE29EE /* InputTextView.swift */; };
@@ -41,7 +44,6 @@
 /* Begin PBXFileReference section */
 		03427642293594610047A6EE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1DD6927A2934831100281C0B /* DietView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
-		1DE2D533293944DC00B6986A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7241C37C29138C3400956CB0 /* SignUpDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetails.swift; sourceTree = "<group>"; };
 		7241C37F29138CC700956CB0 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		7241C3852913989000956CB0 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -51,6 +53,10 @@
 		7241C3922916EF4000956CB0 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		7241C3952916F3F000956CB0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		726E3F8029356DBB00A5E11B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		726E3F862942E78500A5E11B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		726E3F8A294304A000A5E11B /* ForgotPasswordService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForgotPasswordService .swift"; sourceTree = "<group>"; };
+		726E3F8D2943071200A5E11B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		726E3F902943106000A5E11B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		72F599B62913474300BE29EE /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		72F599B829134A8000BE29EE /* InputPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordView.swift; sourceTree = "<group>"; };
 		72F599BA29134B7E00BE29EE /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 		7241C37A29138B5500956CB0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				726E3F882943040000A5E11B /* ForgotPassword */,
 				7241C3872916BE0A00956CB0 /* Session */,
 				BBA8F0FE2905E37E0071AD38 /* Views */,
 			);
@@ -218,6 +225,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		726E3F882943040000A5E11B /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				726E3F8F2943104300A5E11B /* Views */,
+				726E3F8C294306DA00A5E11B /* ViewModel */,
+				726E3F892943041500A5E11B /* Service */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		726E3F892943041500A5E11B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				726E3F8A294304A000A5E11B /* ForgotPasswordService .swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		726E3F8C294306DA00A5E11B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				726E3F8D2943071200A5E11B /* ForgotPasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		726E3F8F2943104300A5E11B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				726E3F902943106000A5E11B /* ForgotPasswordView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		72F599B52913466000BE29EE /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,7 +316,7 @@
 		BB3C5FF628F5202F00281635 = {
 			isa = PBXGroup;
 			children = (
-				1DE2D533293944DC00B6986A /* GoogleService-Info.plist */,
+				726E3F862942E78500A5E11B /* GoogleService-Info.plist */,
 				BB3C600128F5202F00281635 /* FitnessTracking */,
 				BB3C600028F5202F00281635 /* Products */,
 				7241C38129138ED400956CB0 /* Frameworks */,
@@ -391,7 +432,7 @@
 			files = (
 				BB3C600A28F5203100281635 /* Preview Assets.xcassets in Resources */,
 				BB3C600728F5203100281635 /* Assets.xcassets in Resources */,
-				1DE2D534293944DC00B6986A /* GoogleService-Info.plist in Resources */,
+				726E3F872942E78500A5E11B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,10 +444,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DD6927B2934831100281C0B /* DietView.swift in Sources */,
+				726E3F912943106000A5E11B /* ForgotPasswordView.swift in Sources */,
 				7241C38D2916BFB900956CB0 /* SessionService.swift in Sources */,
 				AAE977C42933CDA900C545ED /* UserDataView.swift in Sources */,
 				AAE977C02933CD6D00C545ED /* UserDataDetails.swift in Sources */,
+				726E3F8B294304A000A5E11B /* ForgotPasswordService .swift in Sources */,
 				7241C3902916EED500956CB0 /* LoginDetails.swift in Sources */,
+				726E3F8E2943071200A5E11B /* ForgotPasswordViewModel.swift in Sources */,
 				BB4204942905FA100087C04A /* SignUpView.swift in Sources */,
 				BB5151DA2918816D00F3ECA9 /* WorkoutView.swift in Sources */,
 				72F599B72913474300BE29EE /* InputTextView.swift in Sources */,
