@@ -4,7 +4,6 @@
 //
 //  Created by Matthew Kolnicki on 12/9/22.
 //
-
 import SwiftUI
 
 struct WorkoutDetailsView: View {

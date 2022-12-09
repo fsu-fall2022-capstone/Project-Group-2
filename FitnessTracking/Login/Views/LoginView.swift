@@ -2,12 +2,10 @@
 //  FitnessTracking
 //
 //  Matthew Kolnicki, Jalal Jean-Charles, Noah Shaffer, Randy Toyberman
-
 import LocalAuthentication
 import SwiftUI
 import FirebaseAuth
 //test
-
 class AuthViewModel: ObservableObject{
     
     let auth = Auth.auth()
@@ -22,11 +20,13 @@ class AuthViewModel: ObservableObject{
 struct LoginView: View {
 
     @State private var showSignUp = false
+    @State private var showPasswordReset = false
     
     @StateObject private var loginVM = LoginViewModelImpl(service: LoginServiceImpl())
     
     var body: some View{
         VStack{
+            
             Text("Login")
                 .font(.largeTitle)
                 .bold()
@@ -35,6 +35,13 @@ struct LoginView: View {
                           keyboard: .emailAddress)
             
             InputPasswordView(password: $loginVM.details.password, holder: "Password")
+            
+            Button(action: {
+                showPasswordReset.toggle()
+            }, label: {
+                Text("Forgot Password?")
+            })
+            .font(.system(size: 16, weight: .bold))
             
             ButtonView(title: "Login"){
                 loginVM.login()
@@ -46,6 +53,10 @@ struct LoginView: View {
             .sheet(isPresented: $showSignUp
                    , content: {
                 SignUpView()
+            })
+            .sheet(isPresented: $showPasswordReset
+                   , content: {
+                ForgotPasswordView()
             })
                 
         }
@@ -60,25 +71,6 @@ struct LoginView: View {
         })
     }
     
-    /*func authenticate(){
-        let context = LAContext()
-        var error: NSError?
-        
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
-                                   localizedReason: "This is for security"){ success, authenticationError in
-                if success{
-                    text = "UNLOCKED"
-                } else {
-                    text = "There was a problem, try again"
-                    
-                }
-            }
-        } else {
-            text = "This phone does not have biometrics"
-        }
-    }*/
 }
 
 
