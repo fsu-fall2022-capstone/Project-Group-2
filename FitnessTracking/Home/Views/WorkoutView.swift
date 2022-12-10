@@ -16,9 +16,9 @@ struct WorkoutView: View {
     @EnvironmentObject var sessionService: SessionServiceImpl
     
     var body: some View {
-        let StringWeight = sessionService.userDetails?.weight ?? "N/A"
-        let weight = Int(StringWeight) ?? 0
-        let randomInt = Int.random(in: 1..<7)
+        let StringWeight = sessionService.userDetails?.bmi ?? "N/A"
+        let weight = Float(StringWeight) ?? 0
+        //let randomInt = Int.random(in: 1..<7)
 
     
         NavigationView {
@@ -63,7 +63,7 @@ struct WorkoutView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         
-                        if weight < 100{
+                        if weight == 25{
                             ForEach(NormalWorkouts){ workout in
                                 // Day card
                                 
@@ -91,8 +91,36 @@ struct WorkoutView: View {
                                 }
                             }
                         }
-                        else{
+                        else if weight > 25{
                             ForEach(OverweightWorkouts){ workout in
+                                // Day card
+                                
+                                NavigationLink(destination: WorkoutDetailsView(workout: workout)){
+                                    ZStack {
+                                        Image(workout.image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 380, height:220)
+                                        
+                                        VStack{
+                                            Spacer()
+                                            Text(workout.day)
+                                                .font(.largeTitle)
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding()
+                                        .frame(width: 380)
+                                    }
+                                    .frame(width: 150, height: 220)
+                                    .clipped()
+                                    .cornerRadius(20)
+                                    .shadow(radius: 10)
+                                }
+                            }
+                        }
+                        else{
+                            ForEach(UnderweightWorkouts){ workout in
                                 // Day card
                                 
                                 NavigationLink(destination: WorkoutDetailsView(workout: workout)){
