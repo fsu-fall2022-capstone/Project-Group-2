@@ -14,4 +14,5 @@ struct SessionDetails{
     let age: String 
     let height: String
     let weight: String
+    let bmi: String
 }

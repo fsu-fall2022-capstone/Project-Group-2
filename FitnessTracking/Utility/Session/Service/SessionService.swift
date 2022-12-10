@@ -51,7 +51,8 @@ final class SessionServiceImpl: ObservableObject, SessionService {
                                   let gender = value[dbKeys.gender.rawValue] as? String,
                                   let age = value[dbKeys.age.rawValue] as? String,
                                   let height = value[dbKeys.height.rawValue] as? String,
-                                  let weight = value[dbKeys.weight.rawValue] as? String
+                                  let weight = value[dbKeys.weight.rawValue] as? String,
+                                  let bmi = value[dbKeys.bmi.rawValue] as? String
                             else{
                                 return
                             }
@@ -62,7 +63,8 @@ final class SessionServiceImpl: ObservableObject, SessionService {
                                                                         gender: gender,
                                                                         age: age,
                                                                         height: height,
-                                                                        weight: weight)
+                                                                        weight: weight,
+                                                                        bmi: bmi)
                                     }
                         }
                 }
